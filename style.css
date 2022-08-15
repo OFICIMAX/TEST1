@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'roboto_condensed_light';
+    src: url('webfonts/robotocondensed-light-webfont.woff2') format('woff2'),
+         url('webfonts/robotocondensed-light-webfont.woff') format('woff'),
+         url('webfonts/robotocondensed-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'roboto_condensed_regular';
+    src: url('webfonts/robotocondensed-regular-webfont.woff2') format('woff2'),
+         url('webfonts/robotocondensed-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'roboto_medium_regular';
+    src: url('webfonts/roboto-medium-webfont.woff2') format('woff2'),
+         url('webfonts/roboto-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root{
+	--color-one: #F5F5F5;
+	--color-two: #24292E;
+	--color-three: #0366D6;
+
+	--form-color: #14111A;
+
+	--accent-color: #455A64;
+	--border-color: #D8D8D8;
+}
+
+body{
+	font-family: 'roboto_condensed_light';
+    margin: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--color-one);
+	color: #333;
+	font-size: 16px;
+    text-align: center;
+}
+
+.modal{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8) ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    animation: modal 2s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+    opacity: 0;
+}
+img{
+    border-radius: 30px;
+    
+}
+.contenido{
+
+    margin: auto;
+    width: 70%;
+    height: 80%;
+    background: white;
+    border-radius: 10px;
+}
+#cerrar{
+    display: none;
+}
+#cerrar + label{
+    position: fixed;
+    color: #fff;
+    font-size: 25px;
+    z-index: 50;
+    background: #d0d0d0;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 3px;
+    right: 10px;
+    cursor: pointer;
+    animation: modal 2s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+    opacity: 0;
+
+}
+
+#cerrar:checked + label, #cerrar:checked ~ .modal 
+{
+    display: none;
+}
+
+@keyframes modal {
+    100%{
+        
+    visibility: visible;
+    opacity: 1;
+    }
+}
